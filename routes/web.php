@@ -25,6 +25,7 @@ Route::get('/users', 'PagesController@users')->name('users_page');
 Route::resource('users', 'UserController');
 Route::resource('cities', 'CityController');
 Route::resource('routetypes', 'RoutetypeController');
+Route::resource('routes', 'RouteController');
 
 Auth::routes();
 
