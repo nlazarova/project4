@@ -16,12 +16,17 @@
 //});
 
 Route::get('/', 'PagesController@index')->name('index');
-Route::get('/cities', 'PagesController@cities')->name('cities');
-Route::get('/routes', 'PagesController@routes')->name('routes');
-Route::get('/stations', 'PagesController@stations')->name('stations');
-
+Route::get('/cities', 'PagesController@cities')->name('cities_page');
+Route::get('/routes', 'PagesController@routes')->name('routes_page');
+Route::get('/routetypes', 'PagesController@routetypes')->name('routetypes_page');
+Route::get('/stations', 'PagesController@stations')->name('stations_page');
+Route::get('/fuels', 'PagesController@fuels')->name('fuels_page');
 Route::get('/users', 'PagesController@users')->name('users_page');
 Route::resource('users', 'UserController');
+Route::resource('cities', 'CityController');
+Route::resource('routetypes', 'RoutetypeController');
+Route::resource('routes', 'RouteController');
+Route::resource('fuels', 'FuelController');
 
 Auth::routes();
 

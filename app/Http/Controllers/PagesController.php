@@ -22,6 +22,10 @@ class PagesController extends Controller
         return view('routes');
     }
     
+    public function routetypes() {
+        return view('routetypes');
+    }
+    
     public function stations() {
         return view('stations');
     }
