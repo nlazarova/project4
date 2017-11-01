@@ -27,6 +27,7 @@
                 <li class="{{Request::is('cities') ? 'active' : ''}}"><a href="{{ url('/cities') }}">Cities</a></li>
                 <li class="{{Request::is('routes') ? 'active' : ''}}"><a href="{{ url('/routes')}}">Routes</a></li>
                 <li class="{{Request::is('routetypes') ? 'active' : ''}}"><a href="{{ url('/routetypes')}}">Routetypes</a></li>
+                <li class="{{Request::is('fuels') ? 'active' : ''}}"><a href="{{ url('/fuels')}}">Fuels</a></li>
                 <li class="{{Request::is('stations') ? 'active' : ''}}"><a href="{{ url('/stations')}}">Stations</a></li>
                 <li class="{{Request::is('users') ? 'active' : ''}}"><a href="{{ url('/users')}}">Users</a></li>
             </ul>

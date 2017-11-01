@@ -68,9 +68,11 @@ class RouteController extends Controller {
      */
     public function edit($id) {
         
-        $route = Route::findOrFail($id);
+       // $route = Route::findOrFail($id);
+        $route = Route::find($id);
+//        dd($route);
         $routetypes = Routetype::pluck('routetype', 'id')->toArray();
-
+//dd($routetypes);
         return view('routes.edit', compact('routetypes', $routetypes));
         return view('routes.edit', compact('route'));
     }
@@ -84,7 +86,9 @@ class RouteController extends Controller {
      */
     public function update(Request $request, $id) {
         //Update route
+        
         $route = Route::find($id);
+        //dd($route);
         $route->name = $request->input('name');
         $route->length = $request->input('length');
         $route->routetype_id = $request->input('routetype_id');
