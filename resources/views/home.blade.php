@@ -13,15 +13,8 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    @if($user = Auth::user())
 
-                    You are logged in as {{ Auth::user()->user_role->name }}.
-
-
-                    @else
-                    You are not logged in.
-                    @endif
-
+You are logged in
                 </div>
             </div>
         </div>

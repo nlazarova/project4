@@ -6,9 +6,20 @@ use Illuminate\Http\Request;
 use App\CityRoute;
 use App\City;
 use App\Route;
+use App\Http\Requests\CityRouteRequest;
 
 class CityRouteController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +57,7 @@ class CityRouteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CityRouteRequest $request)
     {
          //Create new connection
         $connection = new CityRoute;
@@ -101,7 +112,7 @@ $cities = City::pluck('name', 'id')->toArray();
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $route_id)
+    public function update(CityRouteRequest $request, $route_id)
     {
         
 //Update connection

@@ -5,8 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Route;
 use App\Routetype;
+use App\Http\Requests\RouteRequest;
 
 class RouteController extends Controller {
+    
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -37,7 +48,7 @@ class RouteController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(RouteRequest $request) {
         //Create new route
         $route = new Route;
         $route->name = $request->input('name');
@@ -84,7 +95,7 @@ class RouteController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(RouteRequest $request, $id) {
         
 
 //Update route        
