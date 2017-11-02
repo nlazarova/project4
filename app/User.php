@@ -6,8 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
+
     use Notifiable;
     use SoftDeletes;
 
@@ -28,11 +28,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
-     //The user has only one role - function
+
+    //The user has only one role - function
     public function user_role() {
         return $this->hasOne('App\UserRole');
     }
-    
+
+    public function isAdmin() {
+        return $this->user_role()->where('name', 'admin')->exists();
+    }
+
     protected $dates = ['deleted_at'];
+
 }

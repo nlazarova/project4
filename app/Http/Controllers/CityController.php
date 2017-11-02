@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\City;
 use Illuminate\Http\Request;
+use App\Http\Requests\CityRequest;
 
 class CityController extends Controller
 {
@@ -35,7 +36,7 @@ class CityController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CityRequest $request)
     {
          //Create new city
         $city = new City;
@@ -77,7 +78,7 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CityRequest $request, $id)
     {
         //Update city
         $city = City::find($id);
