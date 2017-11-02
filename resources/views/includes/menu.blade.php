@@ -23,7 +23,7 @@
                     </ul>
                     
                     <ul class="nav navbar-nav">
-                <li class="{{Request::is('home') ? 'active' : ''}}"><a href="{{ route('index')}}">Home</a></li>
+                <li class="{{Request::is('home') ? 'active' : ''}}"><a href="{{ route('home')}}">Home</a></li>
                 <li class="{{Request::is('cities') ? 'active' : ''}}"><a href="{{ url('/cities') }}">Cities</a></li>
                 <li class="{{Request::is('routes') ? 'active' : ''}}"><a href="{{ url('/routes')}}">Routes</a></li>
                 <li class="{{Request::is('routetypes') ? 'active' : ''}}"><a href="{{ url('/routetypes')}}">Routetypes</a></li>
