@@ -12,7 +12,7 @@ class Route extends Model
     protected $fillable = [
         'name', 'length', 'routetype_id'
     ];
-
+/////////ot
     public function routetype()
     {
         return $this->belongsTo('App\Routetype');
@@ -27,7 +27,7 @@ class Route extends Model
     {
         return $this->belongsToMany('App\City');
     }
-
+////////do
   //  public function city_route()
   //  {
   //      return $this->hasMany('App\CityRoute');

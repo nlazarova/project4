@@ -15,8 +15,8 @@ class Station extends Model
         return $this->belongsTo('App\Route');
     }
 
-    public function fuels()
-    {
-        return $this->belongsToMany('App\Fuel');
-    }
+   // public function fuels()
+   // {
+   //     return $this->belongsToMany('App\Fuel');
+   // }
 }
