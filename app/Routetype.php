@@ -15,7 +15,8 @@ class Routetype extends Model
 
     public function route()
     {
-    	return $this->hasMany('App\Route');
+    	return $this->hasOne('App\Route');
+    	//return $this->hasMany('App\Route');
     }
     
     protected $dates = ['deleted_at'];

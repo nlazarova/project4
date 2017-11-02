@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Fuel extends Model
 {
     protected $fillable = [
-        'name'
+        'name', 'route_id',
     ];
 
     public function stations()
